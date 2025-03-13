@@ -18,9 +18,21 @@ while True:
 
        
     if num == "출금" :
-        pass 
+        withdraw_amount = input("출금할 금액을 입력해주세요 :")
+        if withdraw_amount.isdigit() and int(withdraw_amount) > balance :
+            print("잔액이 부족합니다.")
+
+        elif withdraw_amount.isdigit() and int(withdraw_amount) > 0:
+           balance -= int(withdraw_amount)
+           print(f'출금하신 금액은{withdraw_amount}원이고, 출금 후 잔액은{balance}원 입니다.')
+
+        else:
+            print("제대로 된 금액을 입력해주세요.")
+        
     if num == "영수증 보기" :
+
         pass
+        
     if num == "종료" :
         print("서비스를 종료합니다.")
         break
